@@ -1,2 +1,2 @@
-# dodue
-Source code for DoDue app
+# DueDo App
+Source code for DueDo app
