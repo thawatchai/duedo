@@ -9,7 +9,7 @@ import com.mikepenz.material_design_iconic_typeface_library.MaterialDesignIconic
 
 public class ListActivity extends BaseActivity {
 
-    private static int NEW_TASK = 1;
+    private static final int NEW_TASK = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
