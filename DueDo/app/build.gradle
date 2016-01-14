@@ -32,6 +32,7 @@ dependencies {
     compile 'com.mikepenz:material-design-iconic-typeface:2.2.0.1@aar'
     compile 'com.mikepenz:fontawesome-typeface:4.5.0.1@aar'
     compile 'com.pixplicity.easyprefs:library:1.8.1@aar'
+    compile 'com.github.satyan:sugar:1.4'
 }
 
 repositories {
@@ -48,6 +49,3 @@ buildscript {
     }
 }
 
-dependencies {
-    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
-}
