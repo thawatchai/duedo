@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name">DueDo</string>
     <string name="tasks">Tasks</string>
-    <string name="task_title">Task Title</string>
+    <string name="task_title">Title</string>
     <string name="new_task">New Task</string>
     <string name="task">Task</string>
     <string name="save">Save</string>
+    <string name="no_task">No Task</string>
+    <string name="task_content">Content</string>
+    <string name="unsaved_exit_alert">You have unsaved data. Are you sure you want to exit?</string>
+    <string name="title_is_required">Task title is required.</string>
 </resources>
