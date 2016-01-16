@@ -17,16 +17,24 @@ public class Task extends Model {
     @Column(name = "content")
     public String content;
 
-    @Column(name = "due_at", index = true)
-    public Date dueAt;
+    @Column(name = "dueAt", index = true)
+    public Date dueAt = null;
 
-    @Column(name = "created_at", index = true)
-    public Date createdAt;
+    @Column(name = "createdAt", index = true)
+    public Date createdAt = null;
 
-    @Column(name = "updated_at", index = true)
-    public Date updatedAt;
+    @Column(name = "updatedAt", index = true)
+    public Date updatedAt = null;
 
     public static List<Task> getAll() {
-        return new Select().from(Task.class).orderBy("created_at ASC").execute();
+        return new Select().from(Task.class).orderBy("updatedAt DESC").execute();
+    }
+
+    public void saveWithTimestamp() {
+        Date now = new Date();
+        updatedAt = now;
+        if (createdAt == null)
+            createdAt = now;
+        save();
     }
 }

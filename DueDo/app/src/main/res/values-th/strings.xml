@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DueDo</string>
+    <string name="unsaved_exit_alert">คุณยังไม่ได้เก็บข้อมูล คุณแน่ใจหรือไม่ว่าต้องการออกจากหน้านี้?</string>
+    <string name="are_you_sure">คุณแน่ใจหรือไม่?</string>
+    <string name="delete">ลบ</string>
+    <string name="edit">แก้ไข</string>
+    <string name="edit_task">แก้ไขงาน</string>
+    <string name="new_task">สร้างงานใหม่</string>
+    <string name="no_task">ไม่มีงาน</string>
+    <string name="save">จัดเก็บ</string>
+    <string name="task">งาน</string>
+    <string name="task_content">เนื้อหา</string>
+    <string name="task_title">หัวข้อ</string>
+    <string name="tasks">งาน</string>
+    <string name="title_is_required">ต้องใส่หัวข้อด้วย</string>
+</resources>
