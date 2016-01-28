@@ -22,7 +22,6 @@ import java.util.List;
 
 public class ListActivity extends BaseActivity {
 
-    private static final int NEW_TASK = 1;
     private static final int SHOW_TASK = 2;
 
     private ArrayList<Task> tasks;

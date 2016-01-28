@@ -1,5 +1,6 @@
 package org.usablelabs.duedo;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -8,11 +9,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.iconics.typeface.IIcon;
+import com.mikepenz.material_design_iconic_typeface_library.MaterialDesignIconic;
+import com.mikepenz.materialdrawer.Drawer;
+import com.mikepenz.materialdrawer.DrawerBuilder;
+import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
+import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
 public abstract class BaseActivity extends AppCompatActivity {
+
+    protected static final int NEW_TASK = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +33,34 @@ public abstract class BaseActivity extends AppCompatActivity {
         setSupportActionBar(toolbar_main);
 
         ActionBar supportActionBar = getSupportActionBar();
-        if (supportActionBar != null) supportActionBar.setDisplayHomeAsUpEnabled(upEnabled);
+        if (supportActionBar != null)
+            if (upEnabled) {
+                supportActionBar.setDisplayHomeAsUpEnabled(true);
+            } else {
+                final Intent intent = new Intent(this, FormActivity.class);
+                new DrawerBuilder()
+                        .withActivity(this)
+                        .withToolbar(toolbar_main)
+                        .addDrawerItems(
+                                new PrimaryDrawerItem()
+                                        .withName(R.string.new_task)
+                                        .withIcon(MaterialDesignIconic.Icon.gmi_plus)
+                                        .withSelectable(false)
+                                        .withIdentifier(1)
+                        ).withSelectedItem(-1)
+                        .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
+                            @Override
+                            public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
+                                switch (drawerItem.getIdentifier()) {
+                                    case 1:
+                                        startActivityForResult(intent, NEW_TASK);
+                                        break;
+                                }
+                                return false;
+                            }
+                        })
+                        .build();
+            }
     }
 
     @Override
